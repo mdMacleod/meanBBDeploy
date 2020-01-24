@@ -1,0 +1,60 @@
+
+
+<!-- 
+
+<script type="text/javascript">
+   
+
+function enableBtn() {
+    document.getElementById("myBtn").disabled = false;
+    }
+
+</script> -->
+
+
+
+<h4> Details about {{ pet.name }}</h4>
+
+<div style="display: inline">
+    <h5> Pet Type:      </h5>
+    <p> {{ pet.type }}</p>
+</div>
+
+<div style="display: inline">
+    <h5> Pet description:      </h5>
+    <p> {{ pet.description }}</p>
+</div>
+
+<div style="display: inline">
+    <h5> Skills:      </h5>
+    <p> {{ pet.skillOne }}</p><br><br>
+    <p> {{ pet.skillTwo }}</p><br> <br>
+    <p> {{ pet.skillThree }}</p>
+</div>
+
+
+<div style="display: inline">
+    <h5> Likes:      </h5>
+    <p> {{ pet.vote }}</p>
+</div>
+
+<div style="display: inline">
+    <div *ngIf="counter == 0">
+        <button type="button" id="upVoteButton" (click)="upvote(pet._id)" (click)="disableBtn" >Like This Pet</button>
+    </div>
+    <div *ngIf="counter > 0">
+        <button type="button" id="upVoteButton" disabled>Like This Pet</button>
+    </div>
+    <button (click)="destroy(pet._id)">Adopt This Pet</button>
+</div>
+
+{{ counter | json }}
+<!-- <script type="text/javascript">
+
+    document.getElementById("upVoteButton").onclick = function() {
+    //disable
+    this.disabled = true;
+
+    //do some validation stuff
+}
+</script> -->

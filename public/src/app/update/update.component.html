@@ -1,0 +1,93 @@
+
+    <p style="color: red; font-weight: bold;"> {{errors.errors.name.message}}</p>
+    <p style="color: red; font-weight: bold;"> {{errors.errors.type.message}}</p>
+    <p style="color: red; font-weight: bold;"> {{errors.errors.description.message}}</p>
+    <p style="color: red; font-weight: bold;"> {{errors.errors.skillOne.message}}</p>
+    <p style="color: red; font-weight: bold;"> {{errors.errors.skillTwo.message}}</p>
+    <p style="color: red; font-weight: bold;"> {{errors.errors.skillThree.message}}</p>
+
+<h4> Edit This Pet:</h4>
+
+<form  (submit) = "onSubmitEdit()" #form="ngForm">
+    <div>
+        <label for="name">Pet's name:</label>
+    </div>
+    <input 
+        value="editPet.name"
+        type="text" 
+        name="name"
+        [(ngModel)]="editPet.name"
+        #name="ngModel"
+    />
+
+    <p><small
+        [hidden]="name.valid || form.pristine">
+    Your Pet's name should be atleast 3 characters long
+    </small>
+    </p>
+
+    <div>
+        <label for=type>Pet's type:</label>
+    </div>
+    <input 
+    value="editPet.type"
+    type="text" 
+    name="type"
+    [(ngModel)]="editPet.type"
+    #type="ngModel"
+    />
+    <p><small
+        [hidden]="type.valid || form.pristine">
+    Your Pet's type should be atleast 3 characters long
+    </small>
+    </p>
+
+
+    <div>
+        <label for="description">Pet's description:</label>
+    </div>
+    <input 
+        value="editPet.description"
+        type="text" 
+        name="description"
+        [(ngModel)]="editPet.description"
+        #description="ngModel"
+    />
+    <p><small
+        [hidden]="description.valid || form.pristine">
+    Your Pet's description should be atleast 3 characters long
+    </small>
+    </p>
+
+    
+    <h5>Pet's Skills (At least one, up to three):</h5>
+    
+    <label for="skillOne">Skill 1: </label>
+    <input 
+        value="editPet.skillOne"
+        type="text" 
+        name="skillOne"
+        [(ngModel)]="editPet.skillOne"
+        #skillOne="ngModel"
+    /><br>
+
+    <label for="skillTwo">Skill 2: </label>
+    <input 
+        value="editPet.skillTwo"
+        type="text" 
+        name="skillTwo"
+        [(ngModel)]="editPet.skillTwo"
+        #skillTwo="ngModel"
+    /><br>
+
+    <label for="skillThree">Skill 3: </label>
+    <input 
+        value="editPet.skillThree"
+        type="text" 
+        name="skillThree"
+        [(ngModel)]="editPet.skillThree"
+        #skillThree="ngModel"
+    /><br><br>
+
+    <input [disabled]="!form.valid" type="submit" value="submit">    |   <button [routerLink] = "['/pets']"> Cancel </button>
+</form >

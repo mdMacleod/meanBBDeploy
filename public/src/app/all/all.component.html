@@ -1,0 +1,32 @@
+
+
+
+
+    <div style="text-align: center; ">
+        <h4>These Pets are looking for a home!</h4>
+        <p> <a class="petsLink" [routerLink]="['/pets', 'new']"> Add a pet to the shelter</a> </p>
+    </div>
+    <content>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <table class=" myTable table table-responsive table-dark table-hover table-striped">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    <tr *ngFor="let pet of pets">
+                        <td scope="row">{{pet.name}}</td>
+                        <td scope="row">{{pet.type}}</td>
+                        <td scope="row"><button class="button" [routerLink]="['/pets', pet._id]">Details </button> | <td scope="row"><button  class="button" [routerLink]="['/pets', pet._id, 'edit']">Edit </button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </content>
+
+
+
+
+
+<!-- <button [routerLink]="['']">Load Alpha</button> -->
